@@ -38,6 +38,28 @@ df['w'].value_counts()
 # List unique values in the df['name'] column
 df.name.unique()
 ```
+### Maximum by category
+If `df` has an index with no duplicate values, then you can use `idxmax` to return the index of the maximum row for each group. Then use `df.loc` to select the entire row:
+
+```py
+#	name     type      votes     
+#	bob       dog        10
+#	pete      cat         8
+#	fluffy    dog         5
+#	max       cat         9
+
+df.loc[df.groupby('type').votes.agg('idxmax')]
+ 
+#	  name type  votes
+#	3  max  cat      9
+#	0  bob  dog     10
+
+```
+If df.index has duplicate values, i.e. is not a unique index, then make the index unique first:
+
+```py
+df = df.reset_index()
+```
 
 
 ## Reshape Data
