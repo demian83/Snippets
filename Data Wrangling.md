@@ -32,7 +32,7 @@ df['w'].value_counts()
 
 ```
 
-## List unique values
+### List unique values
 
 ```py
 # List unique values in the df['name'] column
