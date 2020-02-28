@@ -1,0 +1,79 @@
+Select info from table where row has a max date
+
+
+Select max date:
+
+```sql
+SELECT tipo_operacion, MAX(data_time_stamp) AS  max_date
+FROM table
+WHERE checks>0
+GROUP BY tipo_operacion
+```
+
+Join it back to your data to get the other columns:
+
+```sql
+SELECT tipo_operacion, max_date,checks
+FROM table t
+INNER JOIN
+(SELECT tipo_operacion, MAX(data_time_stamp) AS max_date
+FROM table
+WHERE checks>0
+GROUP BY tipo_operacion) a
+ON a.tipo_operacion = t.tipo_operacion AND a.max_date = data_time_stamp
+```
+Or restrict with a `WHERE`:
+
+```sql
+Select tipo_operacion, data_time_stamp, checks
+FROM table t
+WHERE data_time_stamp IN
+(SELECT MAX(data_time_stamp) 
+FROM table
+WHERE checks>0
+GROUP BY tipo_operacion) a
+```
+
+Or is available use a window `MAX()` (Impala does not allow window on MAX):
+
+To get max dates per `group` alongside other data:
+
+```sql
+SELECT
+  *, 
+  max_date = MAX(date) OVER (PARTITION BY group)
+FROM table
+
+-- group  date      cash  checks  max_date
+-- -----  --------  ----  ------  --------
+-- 1      1/1/2013  0     0       1/3/2013
+-- 2      1/1/2013  0     800     1/1/2013
+-- 1      1/3/2013  0     700     1/3/2013
+-- 3      1/1/2013  0     600     1/5/2013
+-- 1      1/2/2013  0     400     1/3/2013
+-- 3      1/5/2013  0     200     1/5/2013
+```
+Using the above output as a derived table, you can then get only rows where `date` matches `max_date`:
+
+```sql
+SELECT
+  group,
+  date,
+  checks
+FROM (
+  SELECT
+    *, 
+    max_date = MAX(date) OVER (PARTITION BY group)
+  FROM table
+) AS s
+WHERE date = max_date;
+```
+
+Another alternative that could work with a window `MAX()`:
+
+```sql
+SELECT distinct
+  group, 
+  max_date = MAX(date) OVER (PARTITION BY group), checks
+FROM table
+```
