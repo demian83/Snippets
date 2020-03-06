@@ -10,13 +10,13 @@ The fastest method is:
 # 3 -0.589489  0.400487  0.107856  0.194890
 # 4  1.309088 -0.596996 -0.623519  0.020400
 
-sum((df['A']>0) & (df['B']>0))
+sum((df['A'] > 0) & (df['B'] > 0))
 # > 4
 ```
 An alternative but slower way:
 
 ```python
-len(df[(df['A']>0) & (df['B']>0)])
+len(df[(df['A'] > 0) & (df['B'] > 0)])
 ```
 
 
