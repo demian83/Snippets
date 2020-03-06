@@ -1,44 +1,44 @@
 
-## Summarize Data
+### Summarize Data
 
 
-### Basic descriptive statistics for each column (or GroupBy)
+#### Basic descriptive statistics for each column (or GroupBy)
 
 ```py
 df.describe()
 ```
 
-### # of distinct values in a column
+#### # of distinct values in a column
 
 ```py
 df['w'].nunique()
 ```
 
-### # of rows in DataFrame
+#### # of rows in DataFrame
 
 ```py
 len(df)
 ```
 
-### Count number of rows with each unique value of variable
+#### Count number of rows with each unique value of variable
 
 ```py
 df['w'].value_counts()
 ```
 
-###
+####
 
 ```py
 
 ```
 
-### List unique values
+#### List unique values
 
 ```py
 # List unique values in the df['name'] column
 df.name.unique()
 ```
-### Maximum by category
+#### Maximum by category
 
 ```py
 #	name     type      votes     
@@ -69,27 +69,27 @@ df = df.reset_index()
 ```
 
 
-## Reshape Data
+### Reshape Data
 
-### Gather columns into rows
+#### Gather columns into rows
 
 ```py
 pd.melt(df)
 ```
 
-### Spread rows into columns
+#### Spread rows into columns
 
 ```py
 df.pivot(columns='var', values='val')
 ```
 
-### Append rows of DataFrames
+#### Append rows of DataFrames
 
 ```py
 pd.concat([df1,df2])
 ```
 
-### Append columns of DataFrames
+#### Append columns of DataFrames
 
 ```py
 pd.concat([df1,df2], axis=1)
