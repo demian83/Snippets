@@ -11,7 +11,7 @@ The fastest method is:
 # 4  1.309088 -0.596996 -0.623519  0.020400
 
 sum((df['A']>0) & (df['B']>0))
-# >4
+# > 4
 ```
 An alternative but slower way:
 
