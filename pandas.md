@@ -84,7 +84,7 @@ df.groupby(['att1', 'att2']).agg({'att1': "count", 'att3': "sum",'att4': 'mean'}
 
 df.groupby(['Name', 'Fruit']).agg({'Number': "sum"})
 ```
-##NEW
+## NEW
 
 ### Pandas Groupby and Sum Only One Column
 
