@@ -50,15 +50,26 @@ La exposición está dada por el monto de estas operaciones deduciendo las provi
 Los APRC se determinan como la suma ponderada de las exposiciones afectas a requerimiento de capital determinadas según el punto anterior y los ponderadores por riesgo de crédito (PRC).
 En caso de que las exposiciones tengan algún mitigador de riesgo de crédito podría corresponder ajustor los APRC utilizando alguna de las Técnicas de Mitigación de Riesgo de Crédito.
 
+EL PRC se establecerá de acuerdo al tipo de contraparte.
+
 #### Soberanos y Bancos Centrales
 
 De acuerdo a ccalificación externa. Internacional para el caso de MX y nacional si en CLP o UF. 
 Para expoisciones soberanas y con bancos centrales se debe asignar el PRC de acuerdo a la clasificacion internacional y aplicar tabla. 
-El PRC de las exposiones en moneda local con el Estado chileno o e Banco Central de Chile será igual a 0%. ==Dicho PRC será también aplocable a las exposiciones con el soberano o banco central donde resida una fililal bancaria en el exterior==, siempre y cuando sui respectiva rgulación así lo establezca.
+El PRC de las exposiones en moneda local con el Estado chileno o e Banco Central de Chile será igual a 0%. ==Dicho PRC será también aplicable a las exposiciones con el soberano o banco central donde resida una fililal bancaria en el exterior==, siempre y cuando sui respectiva rgulación así lo establezca.
+
+*NOTA:* Inferior a B- pondera 150% mientas que sin clasificación 100%.
 
 #### Exposiciones con Entidades del Sector Público (PSE)
 
-Existe una tabka en función de la clasificación externa de la PSE
+Existe una tabka en función de la clasificación externa de la PSE.
+Las PSE comprenden organismos con autonomía de gestión y patrimonio propio, y empresas estatales. En general, incluye todos los servicios públicos creados por ley y las empresas, sociedades o entidades públicas o privadas en que el Estado o sus empresas tengan aporte de capital mayoritario o en igual proporción o, en las mismas condiciones, representación o participación.
+
+#### Instituciones Internacionales o Bancos Multilaterales de Desarrollo
+
+PRC 0% cuando la exposición es con:
+- 
+
 
 #### Interbancaras supervisadas por la CMF
 
