@@ -19,8 +19,9 @@ Public Sector Entity
 
 
 
-Soberanos y Bancos Centrales
-: De acuerdo a ccalificación externa. Internacional para el caso de MX y nacional si en CLP o UF. 
+### Soberanos y Bancos Centrales
+
+De acuerdo a ccalificación externa. Internacional para el caso de MX y nacional si en CLP o UF. 
 Para expoisciones soberanas y con bancos centrales se debe asignar el PRC de acuerdo a la clasificacion internacional y aplicar tabla. 
 El PRC de las exposiones en moneda local con el Estado chileno o e Banco Central de Chile será igual a 0%. ==Dicho PRC será también aplocable a las exposiciones con el soberano o banco central donde resida una fililal bancaria en el exterior==, siempre y cuando sui respectiva rgulación así lo establezca.
 
